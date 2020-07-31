@@ -21,7 +21,15 @@ fun main(args: Array<String>) {
         install(CallLogging)
 
         routing {
-            get("/echo") {
+            get("/") {
+                call.respondText(ContentType.Text.Plain, HttpStatusCode.OK) {
+                    call.request.headers
+                        .toMap()
+                        .toList()
+                        .joinToString("\n") { it.first + ": " + it.second }
+                }
+            }
+            post("/") {
                 call.respondText(ContentType.Text.Plain, HttpStatusCode.OK) {
                     call.request.headers
                         .toMap()
