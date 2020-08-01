@@ -82,7 +82,7 @@ jib {
         }
         container {
             mainClass = "com.kekmech.MainKt"
-            ports = ["8080", "2000-2003/udp", "80"]
+            ports = ["8081", "8082", "8083"]
             creationTime = "2020-07-25T10:00:00+03:00"
             volumes = ["/etc/ehcache/schedule"]
         }
